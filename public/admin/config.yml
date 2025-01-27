@@ -7,11 +7,18 @@ backend:
 collections:
   - name: "article"
     label: "Article"
-    folder: "/pages/article"
-    create: true
+    folder: "src/pages/article"
     media_folder: "assets"
+    slug: "{{slug}}"
+    path: "{{slug}}/index"
+    create: true
     fields:
-      - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
+      - {
+          label: "Layout",
+          name: "layout",
+          widget: "hidden",
+          default: "../../layouts/ArticleLayout.astro",
+        }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Summery", name: "summery", widget: "string" }
       - { label: "Thumbnail image", name: "thumbnail", widget: "file" }
